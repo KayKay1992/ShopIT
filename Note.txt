@@ -1,2 +1,6 @@
-In adding custom boostrap theme, we created an asset folder and a subfolder of styles, where we added 2 style files booststrap.custom.css and index.css, we imported this files into our index.js file. 
-Remove the default index.css in the src folder and comment bootsrtap out in the index.js
+Listing some dummy product list data page
+we created a product.js file with some dummy product,
+we created image folder which contains some dummy product image.,
+we created a productCard which contains the poduct detials and passing the product as a destructured prop
+we created a HmeScreen file where we recieved the productCard using the product dummy data file which we imported.
+then we pass the homeScreen to the App.js component which displays our product detials and the product.
