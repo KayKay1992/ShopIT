@@ -1,4 +1,2 @@
-*Installing bootstrap for ui design into our frontend folder and bootstrap react icons with this command npm i react-bootstrap bootstrap react-icons
-* then we imported bootstap to the index.js file
-*we created a componenet folder were we created Header and footer files which we exported to enable us use it in many other places 
-* then we import this components files to App.js component. we also imported container from react-booststap
+In adding custom boostrap theme, we created an asset folder and a subfolder of styles, where we added 2 style files booststrap.custom.css and index.css, we imported this files into our index.js file. 
+Remove the default index.css in the src folder and comment bootsrtap out in the index.js
