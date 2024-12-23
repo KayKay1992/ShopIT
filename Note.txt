@@ -1,2 +1,4 @@
-After installing the create react app with this command npx create-react-app nameofFolder, navigating to the folder and trying to start the project i got error of a particular module not found (ajv), so i have to install this module by running the following command npm install --save-dev ajv@^7 ...this worked for me.
-
+*Installing bootstrap for ui design into our frontend folder and bootstrap react icons with this command npm i react-bootstrap bootstrap react-icons
+* then we imported bootstap to the index.js file
+*we created a componenet folder were we created Header and footer files which we exported to enable us use it in many other places 
+* then we import this components files to App.js component. we also imported container from react-booststap
