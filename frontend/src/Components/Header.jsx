@@ -1,12 +1,14 @@
 import {Navbar, Nav, Container} from 'react-bootstrap'
 import {FaShoppingCart, FaUser} from 'react-icons/fa'
 
+
 function Header() {
   return (
     <header>
         <Navbar bg="dark" expand="lg" variant='dark' collapseOnSelect>
         <Container>
-            <Navbar.Brand href='/'>ShopIT
+         
+            <Navbar.Brand>ShopIT
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav'/>
             <Navbar.Collapse id='basic-navbar-nav'>
