@@ -1,6 +1,1 @@
-Implementing react router Dom
-first make sure in the frontend path and run npm install react-router-dom
-so we go to index.js and import createBrowserRouter, createRoutesFromElements,Route, RouterProvider from react-router-dom
-we replaced the a tag with link which we imported from mreact router-dom and replace the href with to.
-for the navbar in header component we first installed react-router-bootstrap this will help you to have client side links within navlinks.
-then in header component we imported link container from react-router-bootstrap
+    We added a rating component
