@@ -1,1 +1,4 @@
-    We added a rating component
+Creating the product detail screen.
+first we created a screen which we called ProductScreen.jsx
+we imported useParams from react router dom
+we also imported our productfile
