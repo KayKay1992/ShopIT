@@ -1,7 +1,5 @@
-NODEMON AND CONCURRENTLY
+Environment Variables
 
-We install nodemon so that we dont have to resatrt our application every time, also we install concurrently to enable us run backend and frontend same time despite having different port. with npm i -D nodemon concurrently.
-so we setup some scriptts in package.json
-server=== for running backend
-client=== for running frontend
-dev === for running the both server and client simultaneously
+we installed a dotenv package with npm i dotenv, we will have .env file and we will define the variables we will like to protect in there.
+the env is deployed and server on the server itself.
+To access the env you will write process.env.(any item you want to access)
