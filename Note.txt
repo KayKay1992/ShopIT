@@ -1,5 +1,7 @@
-Environment Variables
+fetching Products.
+We are going to use axios to fetch data. so we will install axios in our frontend using npm i axios.
+in package.json we added proxy which helps us to fetch http domain instaed of repeating it everytime.
+now we want to fetch the product from the backend.
+we did this both in the homescreen fetching all products from backend product file even at productScreen using useState and useEffect hook, we fetched with axios. 
 
-we installed a dotenv package with npm i dotenv, we will have .env file and we will define the variables we will like to protect in there.
-the env is deployed and server on the server itself.
-To access the env you will write process.env.(any item you want to access)
+but next rather than fetching from dummy file in backed we want to fetch from database.
