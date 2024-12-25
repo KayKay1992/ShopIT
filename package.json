@@ -1,0 +1,15 @@
+{
+  "name": "shopit",
+  "version": "1.0.0",
+  "description": "eCommerce application built with MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "kenneth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

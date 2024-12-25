@@ -1,4 +1,12 @@
-Creating the product detail screen.
-first we created a screen which we called ProductScreen.jsx
-we imported useParams from react router dom
-we also imported our productfile
+Backend setup, express server and initial Product route;
+we ran npm init in the root folder to set up our package.json.
+in package.json to enable us use import in backend just like the way we used in frontend instead of using required we set the type to module.
+in package.json we change the test script to start and thats where we run our backend server with npm start.
+then we install express dependencies in our root folder with npm install express
+then we import the express package in the server.js file.
+then we created a variable for port which we set to be 5000
+then we created a variable called app to initialize express.
+then we created our first route with get request.
+then we use app.listen to start and listen to our server
+We then added route for single product and route for all products. after we moved products file to data folder.
+always restart the application each time you made changes otherwise install and setup nodemon
