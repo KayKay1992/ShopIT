@@ -1,5 +1,8 @@
-modelling our Data: 
-we are going to create a model for our users, product, order etc, 
-in backend we created a folder called models 
-in the model folder thats where we will create our orderModel, productModel and userModel,
-make sure you export the models created.
+Preparing Sample Data.
+
+we will move a sample data to the database to enable us fetch it with a user. this is called database seeder.
+we will prepare sample data and create a seed, which will be scriptify which will import our product with users when we run our application.
+
+we removed the ids in producct.js because database is going to generate an id for us. we will have a user connected to our product.js file but we will do that in seedScript.
+we created another file in data folder called user.js.
+we installed a package call bcryptjs in root folder we will use it to hash our password. 
