@@ -1,8 +1,7 @@
-Preparing Sample Data.
+Seeding Sample Data.
 
-we will move a sample data to the database to enable us fetch it with a user. this is called database seeder.
-we will prepare sample data and create a seed, which will be scriptify which will import our product with users when we run our application.
-
-we removed the ids in producct.js because database is going to generate an id for us. we will have a user connected to our product.js file but we will do that in seedScript.
-we created another file in data folder called user.js.
-we installed a package call bcryptjs in root folder we will use it to hash our password. 
+We will create our script to take product and users and insert them into the database.
+we will install color package this will enable you to output color in your terminal npm i colors. 
+we then create file seeder.js in backend folder, which is where we will write our seeder scrypt. 
+in package.json we created a scrypt to run our seeder.js file.
+then use npm run data:import to import data or data:destroy to destroy data. 
