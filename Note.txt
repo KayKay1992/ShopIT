@@ -1,7 +1,17 @@
-fetching Products.
-We are going to use axios to fetch data. so we will install axios in our frontend using npm i axios.
-in package.json we added proxy which helps us to fetch http domain instaed of repeating it everytime.
-now we want to fetch the product from the backend.
-we did this both in the homescreen fetching all products from backend product file even at productScreen using useState and useEffect hook, we fetched with axios. 
+we  want to set up our mongodb database using mongb atlas. go to mongodb.com and sign up for free.
+* create a project with any name example ShopIT
+*create your database cluster choose the free version, aws and create it.
+* Add your dataase username and password to your project.
+*go to network and add your ip address.
+* click on connect to get your connection string, copy the link string and put in your .env variable as MONGO_URI,
+*in the string put your user password then after the / give a name to your project otherwise it will generate one name test.
+*come back to mongodb atlas and add a database name and a collection name to your project
 
-but next rather than fetching from dummy file in backed we want to fetch from database.
+Mongodb compass setup
+Download mongodb compass and  download and install it.
+open compass and click on add new connection. copy your mongodb url from .env and paste. give it a name and save it
+
+Connect now to your Database with a tool call mongoose.
+*Mongoose is object data mapper, we can connect to it, then put in our mongodb url string, then we  create a  model schema which is basically contains the object data.
+run npm install mongoose in your root folder to install the mongoose.
+then we create a config file in our backend to connect to the database. so in backend we created config folder and in there we create db.js file where we connect to the database. then we have to call it at the beginning of our project to connect, so we go to our server.js and import connectDB and call it before we initialize the app. 
