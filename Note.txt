@@ -1,11 +1,6 @@
-GETTING PRODUCTS FROM DATABASE.
+custom error middleware
+erronhandler is a middleware funtion used to override the default error messages from expressjs.
 
-Now we wanna fetch our product from database.
-in serverjs is where we have our product route, the file will get stacked when u jamppered all the your route in serverjs.
-so we need the separate the route in separate file.So in backend we created a route folder and created a productRoute file which holds all the product routes, we then export this component to our server.js. 
+so we created errorMiddleware file in middleware folder, this file contains two functions called notFound and errorHandler.
 
-Then to be able to handle the errors properly we have to use async and await function so we created a middleware folder which hold our asyncHandler function file.
-we use the asyncHandler function to wrap our callback function routes.
-to fetch product from our database we have to import our productModel to our productRoute file. Then we use the find method with empty object string to find all the product while we use findById to find a particular product.
-
-then we test the get single product route in the postman.
+then we import and use those function in server.js
