@@ -1,7 +1,7 @@
-Seeding Sample Data.
-
-We will create our script to take product and users and insert them into the database.
-we will install color package this will enable you to output color in your terminal npm i colors. 
-we then create file seeder.js in backend folder, which is where we will write our seeder scrypt. 
-in package.json we created a scrypt to run our seeder.js file.
-then use npm run data:import to import data or data:destroy to destroy data. 
+G
+Introduction to postman which enables you to test your API 
+there is browser and download version you can use the both. but advisably download it. 
+firstly create a workplace
+secondly create environment 
+then add your variable which include base url(http://localhost:port/api) the port can be 5000 for example
+then created a collection for getting all product.
