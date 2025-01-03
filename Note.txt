@@ -1,6 +1,4 @@
-custom error middleware
-erronhandler is a middleware funtion used to override the default error messages from expressjs.
+Product controller
 
-so we created errorMiddleware file in middleware folder, this file contains two functions called notFound and errorHandler.
-
-then we import and use those function in server.js
+its a good practice to use controller when you are using express, instead of writing functions in your route its better to separate the functions and put them into separate file controller. then use the function controller in the router.
+create a folder in the backend called controller and a create a file called productController.js inside contains controller function.
