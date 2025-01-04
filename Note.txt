@@ -1,13 +1,8 @@
-Redux store and API slice
+Products API slice and get products endpoint.
 
-Move to your frontend folder and install a package with this command npm i @reduxjs/toolkit react_redux.
-Create a file in your frontend folder called store.js.
-Import configureStore from reduxjs/toolkit.
-then we configureStore a store storing it in a store variable.
-then we export the store as default.
-Then we go to our index.js and surround routerProvider with react redux provider we first import react redux from provider.
-we then created a constant file where we save our constant url routes.
-Then we created our slices this are collection of reducers and action that are related to each other.
-we can created multiple slices and each slice will have its own state.we will have root api slice, product, users and orders api slices. 
-So in src folder we created a new folder callled slices, where we created apiSlice file.
-Then we use our apislice in store.js to configure the reducer boiler plate.
+fetching products through our slices.
+we created productApiSlice.js file. 
+Inexporting our productApiSlice function we use a certain convention the name of the query e.g getProducts, then we attach querry at the end because it is a query, also we attached use at the initial e.g useGetProductsQuery.
+you will use this to fetch your products.
+So in our homescreen what we where doing is using the useEffect to fetch our products from backend using axios so we delete the axios, useEffect and useState because we wont be needing them. 
+what we are going to be bringing in is useGetProductsQuery from our productsApiSlice
