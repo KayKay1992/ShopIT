@@ -1,3 +1,7 @@
-Get Product Details EndPoint Challenge
+LOADER AND MESSAGE COMPONENT 
 
-same way we did the homescreen we did same for product details page. 
+IN COMPONENT FOLDER WE CREATED A FILE CALLED LOADER.JSX
+we imported spinner from react-bootstap. we then created a loader funtion where we styled our spinner, we exported the loader function and use it in our Homescreen and productdetail screen respectively.
+
+we nalso created a message component importing alert from react bootsrap which we used to wrap our childreen prop. passing the variant prop. then we set the default variant to be info. the variant has 3 options danger, success and info. when we choose not to pass any variant it will take the default variant setting which happens to be info. 
+in Homescreen and productdetail screen we use the Message component to wrap our error message instead of div.

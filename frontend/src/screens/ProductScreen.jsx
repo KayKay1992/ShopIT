@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import {Row, Col, Image, ListGroup, Card, Button} from 'react-bootstrap'
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice"
 import Rating from "../Components/Rating"
+import Loader from "../Components/Loader"
+import Message from "../Components/Message"
 
 function ProductScreen() {
   const { id: productId} = useParams()
@@ -13,7 +15,7 @@ function ProductScreen() {
   return (
     <>
      <Link className="btn btn-light my-3" to='/'>Go Back</Link>
-    {isLoading? (<h2>Loading...</h2>) : error? (<div>{error?.data?.message || error.error}</div>) : (
+    {isLoading? (<Loader/>) : error? (<Message variant='danger'>{error?.data?.message || error.error}</Message>) : (
       <>
     <Row>
         <Col md={5}>
