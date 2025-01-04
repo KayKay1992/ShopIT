@@ -1,8 +1,3 @@
-Products API slice and get products endpoint.
+Get Product Details EndPoint Challenge
 
-fetching products through our slices.
-we created productApiSlice.js file. 
-Inexporting our productApiSlice function we use a certain convention the name of the query e.g getProducts, then we attach querry at the end because it is a query, also we attached use at the initial e.g useGetProductsQuery.
-you will use this to fetch your products.
-So in our homescreen what we where doing is using the useEffect to fetch our products from backend using axios so we delete the axios, useEffect and useState because we wont be needing them. 
-what we are going to be bringing in is useGetProductsQuery from our productsApiSlice
+same way we did the homescreen we did same for product details page. 
