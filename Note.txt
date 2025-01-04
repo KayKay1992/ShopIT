@@ -1,7 +1,14 @@
-LOADER AND MESSAGE COMPONENT 
+SHOPPING CART FUNCTIONALITY : 
+Cart Slice and Reducer.
 
-IN COMPONENT FOLDER WE CREATED A FILE CALLED LOADER.JSX
-we imported spinner from react-bootstap. we then created a loader funtion where we styled our spinner, we exported the loader function and use it in our Homescreen and productdetail screen respectively.
+we will create a new slice for the cart that will hold any state for the shopping cart.
+so in slices folder we created a new file called cartSlice. 
+Here we first import createSlice from @reduxjs/toolkit.
+Then we use the createSlice function to create a slice for the shopping cart which we stored in cartSlice variable.
 
-we nalso created a message component importing alert from react bootsrap which we used to wrap our childreen prop. passing the variant prop. then we set the default variant to be info. the variant has 3 options danger, success and info. when we choose not to pass any variant it will take the default variant setting which happens to be info. 
-in Homescreen and productdetail screen we use the Message component to wrap our error message instead of div.
+we use localStorage to store the initial state for the shopping cart because when we leave the site and come back our items will still be in the cart. we export the cartlice.
+then import cartSliceReducer in store.js 
+and add the cart reducer to the store reducer. 
+
+then in your browser check for the state redux devtools you will see cart item as empty array because weve added nothing.
+
