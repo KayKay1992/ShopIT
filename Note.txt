@@ -1,15 +1,8 @@
-Adding the Cart Screen 
+Adding Remove From cart functionality
 
-when you add an item to the cart it takes you to the cart page.
-we go the screen folder and add a cartScreen componenent. 
-To  navigate we imported useNavigate.
-To get a state from global state we imported useSelector.
-To dispatch our useSelecttor state we imported useDispatch.
+Since we have add to cart slice we are also going to have remove from cart this wull enable use remove item from cart.
+so in cartSlice file we add remove from cart functionality returned updateCart from our cartUtils and pass in the state. then we exported the remove from cart functionality just like we exported add to cart.
+we then use the remove from cart in the cart screen 
+in the trash button we added onClick prop passing the removefromCartHandler function, you must pass this function as a call back function so that it will not remove everything. it will only remove the an item with the id. 
 
-After writing our CartScreen functions 
-we were able to get our item into the cartscreen, were able to integrate quantity increment and decrement directly from the cartScreen,
-we were able to calculate the sum total price of the items dynamically 
-and added a proceed tp checkout button.
-
-then we export the cartScreen and were able to use it in index.js.
-
+then we made proceed the checkout button clickable by adding onclick prop to the function and passing the proceedToCheckoutHandler function.
