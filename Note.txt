@@ -1,14 +1,6 @@
-SHOPPING CART FUNCTIONALITY : 
-Cart Slice and Reducer.
-
-we will create a new slice for the cart that will hold any state for the shopping cart.
-so in slices folder we created a new file called cartSlice. 
-Here we first import createSlice from @reduxjs/toolkit.
-Then we use the createSlice function to create a slice for the shopping cart which we stored in cartSlice variable.
-
-we use localStorage to store the initial state for the shopping cart because when we leave the site and come back our items will still be in the cart. we export the cartlice.
-then import cartSliceReducer in store.js 
-and add the cart reducer to the store reducer. 
-
-then in your browser check for the state redux devtools you will see cart item as empty array because weve added nothing.
-
+Adding Add to the cart functionality.
+we will add the reducer action to add the item to the cart.
+so we go to the cartSlice and to the reducer object and add a new function called add to the cart,
+in add to cart since its areducer action is going to take 2 things state and action. 
+so we calculated the items price, shipping price, tax price and the total price and save it to the localstorage.
+then we exported the addToCart  function to enable us use it in our components.
