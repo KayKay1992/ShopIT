@@ -1,3 +1,4 @@
-Qty AND AddToCart Handler
-
-now we have to import the add to cart funtion to our screens, but we have to first of all add the qty selector. we did that with the help of useState.
+Cart utils file
+we want to clean up our cart slice file a little bit.
+addDecimal we are going to put it in a separate file.
+we created a new folder in src folder called utils, the we created a file in the the utils folder called cartUtils.js, thats where we created and export the addDecimal fuunction which we removed from cartSlice file.
