@@ -1,7 +1,15 @@
-    ITEM COUNT IN THE HEADER
+Adding the Cart Screen 
 
-Now we want to show the number of items we have in the cart logo at the header section.
-we are going to learn how to select anything you want from the global state. We are going to do it using a react hook called useSelector.
-so we go to our header component and import useSelector from react-redux.
-we go to our component and distructure what you want, the useSelector holds a function which holds the state, you use the state to select what you want, this time is cart. so we did state.cart
-then in the cart navlink we display the total quantity of our cartitems in the cart. we imported badge from react-bootstrap.
+when you add an item to the cart it takes you to the cart page.
+we go the screen folder and add a cartScreen componenent. 
+To  navigate we imported useNavigate.
+To get a state from global state we imported useSelector.
+To dispatch our useSelecttor state we imported useDispatch.
+
+After writing our CartScreen functions 
+we were able to get our item into the cartscreen, were able to integrate quantity increment and decrement directly from the cartScreen,
+we were able to calculate the sum total price of the items dynamically 
+and added a proceed tp checkout button.
+
+then we export the cartScreen and were able to use it in index.js.
+
