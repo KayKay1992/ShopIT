@@ -1,4 +1,7 @@
-Cart utils file
-we want to clean up our cart slice file a little bit.
-addDecimal we are going to put it in a separate file.
-we created a new folder in src folder called utils, the we created a file in the the utils folder called cartUtils.js, thats where we created and export the addDecimal fuunction which we removed from cartSlice file.
+    ITEM COUNT IN THE HEADER
+
+Now we want to show the number of items we have in the cart logo at the header section.
+we are going to learn how to select anything you want from the global state. We are going to do it using a react hook called useSelector.
+so we go to our header component and import useSelector from react-redux.
+we go to our component and distructure what you want, the useSelector holds a function which holds the state, you use the state to select what you want, this time is cart. so we did state.cart
+then in the cart navlink we display the total quantity of our cartitems in the cart. we imported badge from react-bootstrap.
