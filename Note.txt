@@ -1,6 +1,3 @@
-Adding Add to the cart functionality.
-we will add the reducer action to add the item to the cart.
-so we go to the cartSlice and to the reducer object and add a new function called add to the cart,
-in add to cart since its areducer action is going to take 2 things state and action. 
-so we calculated the items price, shipping price, tax price and the total price and save it to the localstorage.
-then we exported the addToCart  function to enable us use it in our components.
+Qty AND AddToCart Handler
+
+now we have to import the add to cart funtion to our screens, but we have to first of all add the qty selector. we did that with the help of useState.
