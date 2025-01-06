@@ -4,6 +4,7 @@ dotenv.config();
 import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import productRoute from './routes/productRoute.js'
+import userRoute from './routes/userRoute.js'
 const port = process.env.PORT || 5000 ;
 
 connectDB(); // Connect to the MongoDB database
@@ -16,6 +17,9 @@ app.get('/', (req, res) => {
 
 // Route to get all products
 app.use('/api/products', productRoute);
+
+// Route to get all users
+app.use('/api/users', userRoute);
 
 // Error handling middleware
 

@@ -1,2 +1,9 @@
+BACKEND AUTHENTICATION
+User Routes and COntroller.
 
-Addingcontinue shopping link to the shopping cart. this link returns you to the home page.
+Now we will just have a structure for our route and controller first we will add the functionality later.
+in route folder we created userRoute.js and in controller folder we will add the userController.js
+the controller holds the function while the route holds the user Routes. 
+
+Then we pass the userRoute to the server.js
+
