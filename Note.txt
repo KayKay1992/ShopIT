@@ -1,8 +1,2 @@
-Adding Remove From cart functionality
 
-Since we have add to cart slice we are also going to have remove from cart this wull enable use remove item from cart.
-so in cartSlice file we add remove from cart functionality returned updateCart from our cartUtils and pass in the state. then we exported the remove from cart functionality just like we exported add to cart.
-we then use the remove from cart in the cart screen 
-in the trash button we added onClick prop passing the removefromCartHandler function, you must pass this function as a call back function so that it will not remove everything. it will only remove the an item with the id. 
-
-then we made proceed the checkout button clickable by adding onclick prop to the function and passing the proceedToCheckoutHandler function.
+Addingcontinue shopping link to the shopping cart. this link returns you to the home page.

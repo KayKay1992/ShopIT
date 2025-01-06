@@ -102,12 +102,15 @@ function CartScreen() {
                 disabled={cartItems.length === 0} onClick={checkoutHandler}
               >
                 Proceed to Checkout
-              </Button>
+              </Button> 
             </ListGroup.Item>
+            <Link to="/">Continue Shopping</Link>
           </ListGroup>
+         
         </Card>
       </Col>
     </Row>
+
   );
 }
 
