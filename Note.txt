@@ -1,15 +1,8 @@
-Auth user and get token
-User Email and Password Validation
-
-* we have to use req.body to request for the body of data.
-* We have to add middleware in server.js to enable us use the middleware to parse our body i.e use of body parser. 
-
-*So in server.js we added body parser middleware.
-we also added the urlencoded where we parse in an object with extended keyword and set it to true.
-
-in conroller we destructure the email and password from the request body. 
-
-then we check for the user if the user that has that email and password
-
-we hashed the password in our userModel and checked for matched password in our controller auth.
+JSON WEB TOKEN 
+How json web token work: 
+we have several ways of authentication in web developement using cookies, sessions, Jsonwebtoken or combinations and others ..in this case we will use the Jsonwebtoken.
+json web token is a secured way of sharing information between the server and the client.
+it consist of 3 parts a header, a payload and a signature. the payload is the constains information like the user id .
+we use jwt to verify a user is authenticated. when a verified user is signed in, te user gets a token which gets stored in the google storage of the client and then send that token to any protected route. But this process is not secured because anybody can access the token from mthe browser. 
+so we will generate a jwt token and then store it in hhtp only cookie on the server. so we will create a middleware for this. this will make the token not to stored in the browser 
 
