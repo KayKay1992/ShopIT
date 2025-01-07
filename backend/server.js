@@ -11,6 +11,10 @@ connectDB(); // Connect to the MongoDB database
 
 const app = express();
 
+// Middleware to parse JSON request bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
     res.send('Hello, World! My API is running');
 })

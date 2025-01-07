@@ -1,9 +1,15 @@
-BACKEND AUTHENTICATION
-User Routes and COntroller.
+Auth user and get token
+User Email and Password Validation
 
-Now we will just have a structure for our route and controller first we will add the functionality later.
-in route folder we created userRoute.js and in controller folder we will add the userController.js
-the controller holds the function while the route holds the user Routes. 
+* we have to use req.body to request for the body of data.
+* We have to add middleware in server.js to enable us use the middleware to parse our body i.e use of body parser. 
 
-Then we pass the userRoute to the server.js
+*So in server.js we added body parser middleware.
+we also added the urlencoded where we parse in an object with extended keyword and set it to true.
+
+in conroller we destructure the email and password from the request body. 
+
+then we check for the user if the user that has that email and password
+
+we hashed the password in our userModel and checked for matched password in our controller auth.
 
