@@ -1,8 +1,12 @@
-JSON WEB TOKEN 
-How json web token work: 
-we have several ways of authentication in web developement using cookies, sessions, Jsonwebtoken or combinations and others ..in this case we will use the Jsonwebtoken.
-json web token is a secured way of sharing information between the server and the client.
-it consist of 3 parts a header, a payload and a signature. the payload is the constains information like the user id .
-we use jwt to verify a user is authenticated. when a verified user is signed in, te user gets a token which gets stored in the google storage of the client and then send that token to any protected route. But this process is not secured because anybody can access the token from mthe browser. 
-so we will generate a jwt token and then store it in hhtp only cookie on the server. so we will create a middleware for this. this will make the token not to stored in the browser 
+JWT HTTP ONLY COOKIE:
+install jsonwebton in your root folder with  this command npm i jsonwebtoken
+Now we are going to use it in the userController file so we import jwt from the jsonwebton.
+jwt.sign() is a function that creates the token, it holds an object of the payload which happens to be the user id, then the JWT_SECRET which we will store in .env, then expiredIn 
 
+then we set jwt as http only cookie using res.cookie()
+you can set your JWT_SECRET in .env as anything you want.
+whenever you add anything in .env make sure you restart the server. 
+
+After everyrhing you can sign in a user in the postman or any api testing tool you are using, upon successful login,     you will see a cookie for that user, you can then copy the token and open jwt.io in browser and paste that your token. you will see the structure.
+
+Next is to create a middleware that will process our cookie which we will parse in our secured routes to make it private.
