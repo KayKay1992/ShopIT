@@ -1,19 +1,8 @@
+LOGOUT USER AND CLEAR COOKIES.
 
-Auth middleware endpoint
+we will  find way to clear cookies that is log out a user without we coming to postman for deleting the cookie
 
-we will create a middleware that will process our cookie which we will parse in our secured routes to make it private.
+In user controller at logout function we set res.cookie to empy string, i contains also the jwt and an object where we set the expires.
 
-we need a way to get the cookie and use it we need the user_id from it.
-we will install a package cookie parser that will help us parse the cookie from the request object. run the command npm i cookie-parser
-
-to enable the middleware we will go to the server.js file and import cookieParser from cookie-parser then we use it with the help of app.use, this will allow us to access request.cookies
-
-so in middleware folder we created authMiddleware.js file and there we import jwt and and also import asyncHandler and also user from userModel.
-So write function that protects our routes. 
-
-So we used the middleware to protect our routes in the userRoute.js file.
-
-Go to postman or any other api testing tool, delete the cookie then try accessing the protected routes and you will see it will be unauthorised. even as a user u cannot log in to the route that is protected with admin middleware.
-
-what Next? we will  find way to clear cookies that is log out a user without we coming to postman for deleting the cookie
+in postman sign in a user then log out the user you will see the cookie will be gone.
 
