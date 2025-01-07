@@ -1,8 +1,15 @@
-LOGOUT USER AND CLEAR COOKIES.
+User Register and encryptment. 
 
-we will  find way to clear cookies that is log out a user without we coming to postman for deleting the cookie
+we will be able to register user we already have the route and controller fuction lets just add the code now.
 
-In user controller at logout function we set res.cookie to empy string, i contains also the jwt and an object where we set the expires.
+so we need to destructure from the request body name, email and password.
+then we check if the user is already registered using the User model to findOne method, to check if the user with same mail exist if yes then we return an error message saying that the user is already registered.
 
-in postman sign in a user then log out the user you will see the cookie will be gone.
+then if the user doesnt exist we have to create it. using the method User.create, after creating we check if the user was succesfully created otherwise we return an error message.
+
+then we hash the password if not it will return plain password to the database. we will do the hashing of the password in the usermodel. using pre method because we want to hash the password before it get saved in the data base.
+
+To generate token for the user, since we have created it before in the authUser funtion, we decided to separate it into a different file generateToken.js in utils folder. and pass it into authUser and registerUser funtionality for now.
+
+Now try and register a user in postman or any api testing tool upon succesful registration of a user you will recieve a succesfull message, then you can still check your mongodb compass you will see the new user.
 

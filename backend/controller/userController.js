@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken'
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
+import generateToken from '../utils/generateToken.js';
 
 
 //@desc Auth user and get a Token
@@ -11,19 +12,7 @@ const authUser = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
-    
-    //Set jwt token as the HTTP-ONLY token
-
-    res.cookie("jwt", token, {
-      expires: new Date(Date.now() + 86400000), // 24 hours
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Set to true in production
-      sameSite: "strict", // Set to "strict" in production
-
-    });
+     generateToken(user._id, res)
     res.json({
       _id: user._id,
       name: user.name,
@@ -40,7 +29,36 @@ const authUser = asyncHandler(async (req, res) => {
 //@route POST /api/users
 //@access public
 const registerUser = asyncHandler(async (req, res) => {
-  res.send("register user");
+
+  //getting the user details from the database
+  const { name, email, password } = req.body;
+
+  //Checking if the user already exists in the database
+  const userExists = await User.findOne({ email });
+  if (userExists) {
+    res.status(400);
+    throw new Error("Email already exists");
+  }
+
+  //Creating a new user
+  const user = await User.create({
+    name,
+    email,
+    password,
+  });
+
+  //Checking if the user was successfully created
+  if(user){
+    generateToken(user._id, res)
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    })
+  }else{
+    res.status(400).json({message: "Failed to create user"})
+  }
 });
 
 //@desc logout user and clear cookie
