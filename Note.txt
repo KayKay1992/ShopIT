@@ -1,13 +1,10 @@
-User Profile endpoint.
+Frontend End Authentication.
+Auth slice and user API Slice.
+in this slice we will save the users credential to the localstorage.
+we created an authSilce.js file in slice folder, 
+in this file we created our authslice for user info.
+then we added this authslice to the store file.  importing the authslicereucer.
 
-before getting the user profile we will first of all get the user.
-then we check to see if we have a user else we set and error message.
+then we created userApiSlice we used the apilice to inject a new endpoint login which is a mutation not a query. though we used query to get the url
 
-then we also updated the user profile
-in updateUserProfile functionality we first get the user,
-then we update the user details 
-and finally save the updated details.
-then we returned an error message when unsuccessful.
-
-try getting and updating a user profile in postman.
-
+when you inspect your browser, in redux you will see the auth object which holds the user info for now it is null.
