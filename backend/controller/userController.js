@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import asyncHandler from "../middleware/asyncHandler.js";
 import User from "../models/userModel.js";
-// import User from "../models/userModel.js";
+
 
 //@desc Auth user and get a Token
 //@route POST /api/users/login
@@ -22,7 +22,7 @@ const authUser = asyncHandler(async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Set to true in production
       sameSite: "strict", // Set to "strict" in production
-      
+
     });
     res.json({
       _id: user._id,

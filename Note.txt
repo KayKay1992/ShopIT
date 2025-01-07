@@ -1,12 +1,19 @@
-JWT HTTP ONLY COOKIE:
-install jsonwebton in your root folder with  this command npm i jsonwebtoken
-Now we are going to use it in the userController file so we import jwt from the jsonwebton.
-jwt.sign() is a function that creates the token, it holds an object of the payload which happens to be the user id, then the JWT_SECRET which we will store in .env, then expiredIn 
 
-then we set jwt as http only cookie using res.cookie()
-you can set your JWT_SECRET in .env as anything you want.
-whenever you add anything in .env make sure you restart the server. 
+Auth middleware endpoint
 
-After everyrhing you can sign in a user in the postman or any api testing tool you are using, upon successful login,     you will see a cookie for that user, you can then copy the token and open jwt.io in browser and paste that your token. you will see the structure.
+we will create a middleware that will process our cookie which we will parse in our secured routes to make it private.
 
-Next is to create a middleware that will process our cookie which we will parse in our secured routes to make it private.
+we need a way to get the cookie and use it we need the user_id from it.
+we will install a package cookie parser that will help us parse the cookie from the request object. run the command npm i cookie-parser
+
+to enable the middleware we will go to the server.js file and import cookieParser from cookie-parser then we use it with the help of app.use, this will allow us to access request.cookies
+
+so in middleware folder we created authMiddleware.js file and there we import jwt and and also import asyncHandler and also user from userModel.
+So write function that protects our routes. 
+
+So we used the middleware to protect our routes in the userRoute.js file.
+
+Go to postman or any other api testing tool, delete the cookie then try accessing the protected routes and you will see it will be unauthorised. even as a user u cannot log in to the route that is protected with admin middleware.
+
+what Next? we will  find way to clear cookies that is log out a user without we coming to postman for deleting the cookie
+
