@@ -1,10 +1,10 @@
-Frontend End Authentication.
-Auth slice and user API Slice.
-in this slice we will save the users credential to the localstorage.
-we created an authSilce.js file in slice folder, 
-in this file we created our authslice for user info.
-then we added this authslice to the store file.  importing the authslicereucer.
+Login Screen.
+we will create a new component called form container component where we created formCoainer function.
 
-then we created userApiSlice we used the apilice to inject a new endpoint login which is a mutation not a query. though we used query to get the url
+then we created a new screen for login in loginScreen.jsx. we created a login form to help us log in.
 
-when you inspect your browser, in redux you will see the auth object which holds the user info for now it is null.
+then we go to index.js in front end and bring in our login screen.
+
+Sign in in your browser in the sign in page hen open the console you will see the submit showing it was successful.
+
+Next is to make the sign in page functional
