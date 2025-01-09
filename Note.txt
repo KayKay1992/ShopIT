@@ -1,4 +1,8 @@
-USER REGISTRATION functionality
-the first step is in the usersApiSlice, we will create a register mutation. 
-then we craete the screen in screens folder.
-then we import the register sreen in index.js and use it there, to enable us register the route.
+Checkout Process part1 : Creating shipping screen.
+but before we create shipping screen, we will go to cartSlice in addition to cartitem  we will add the shhipping address because we want that to be saved and also set up a payment method .
+
+then we add a reducer action save shipping address.it was originally an empty object so we set it whatever becomes the payload.
+
+Next we create a shipping screen and import sime functions and components.
+
+then we go to index.js and bring in our shipping screen for now later we will make it private.
