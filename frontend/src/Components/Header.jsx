@@ -1,6 +1,9 @@
+import {useNavigate} from 'react-router-dom'
 import {Navbar, Nav, Container, Badge, NavDropdown} from 'react-bootstrap'
 import {FaShoppingCart, FaUser} from 'react-icons/fa'
-import { useSelector } from 'react-redux'
+import { useSelector , useDispatch} from 'react-redux'
+import { useLogoutMutation } from '../slices/usersApiSlice'
+import {logout} from '../slices/authSlice'
 
 
 
@@ -8,8 +11,25 @@ function Header() {
   const {cartItems} = useSelector((state)=> state.cart)
   const {userInfo} = useSelector((state)=> state.auth)
 
-  const logoutHandler = () => {
-    console.log('logged out successfully')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+//getting function to call from uselogoutmutation
+  const [logoutApiCall] = useLogoutMutation()
+
+ //logout function call when user clicks logout button
+ //this will dispatch the logout action in auth slice
+ //and also call the logout mutation in usersApiSlice
+ //the mutation will handle the logout logic and call the necessary actions
+ //after the logout is successful, it will navigate to the login page
+  const logoutHandler = async () => {
+   try{
+    await logoutApiCall().unwrap();
+    dispatch(logout())
+    navigate('/login') //after logout, navigate to login page
+   }catch(err){ 
+    console.log(err)
+   }
   }
  
   return (

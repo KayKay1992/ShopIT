@@ -1,18 +1,13 @@
-Login Functionality.
+User Logout!
 
-first we will call the login mutation from userApiSlice that will send a request to the backend and set the cookie.
+functionality to log out
+two things that need to happen when we log out 
+we need to have a logout endpoint in users api slice to hit the users_url/logout thats how we destroy the cookie on the server backend.
+we also need to logout on the authslice that will take care of the local storage.
 
-then we wwill call from the authslice setCredentials and then get the user stored the localstorage not the token.
+so in users api slice we added a logout mutattion where we accesed our url through the query function. then we export the logout mutation.
+then in authSlice we added logout function which is going to take in state and action, this is where we remove the userInfo from local storage.
 
-we will also use a package called react-toastify in your frontend that will give a message to the user if wrong credentials are inputed. 
+then we have to implement both the logout in the authslice and the one in userapislice in the header because thats where our logout link is.
 
-so lets get started by installing toastify  by running npm i react-toastify
-to use react-toastify we will go to our main app component i.e App.js and import toastContainer from react-toastify then we also import the css file. Then we put ToastContainer in our app component.
-
-Then in login screen we worked on the functionality of our login, we imported lots of components which we used. 
-after which we tried login in upon successful we will be redirected.
-
-Then we worked on making our sign in link in header.jsx dynamic so that when someone successfully signed in the name of the user will be displayed, we also added a drop-down nav for the user...containing profile page link and logout link.
-
-
-                       
+Action logout a user then check in application to check if the cookie is empty in httponly and check also on localstorage to see if you will find a user.
