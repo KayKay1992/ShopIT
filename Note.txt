@@ -1,13 +1,4 @@
-User Logout!
-
-functionality to log out
-two things that need to happen when we log out 
-we need to have a logout endpoint in users api slice to hit the users_url/logout thats how we destroy the cookie on the server backend.
-we also need to logout on the authslice that will take care of the local storage.
-
-so in users api slice we added a logout mutattion where we accesed our url through the query function. then we export the logout mutation.
-then in authSlice we added logout function which is going to take in state and action, this is where we remove the userInfo from local storage.
-
-then we have to implement both the logout in the authslice and the one in userapislice in the header because thats where our logout link is.
-
-Action logout a user then check in application to check if the cookie is empty in httponly and check also on localstorage to see if you will find a user.
+USER REGISTRATION functionality
+the first step is in the usersApiSlice, we will create a register mutation. 
+then we craete the screen in screens folder.
+then we import the register sreen in index.js and use it there, to enable us register the route.
