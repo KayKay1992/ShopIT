@@ -1,10 +1,18 @@
-Login Screen.
-we will create a new component called form container component where we created formCoainer function.
+Login Functionality.
 
-then we created a new screen for login in loginScreen.jsx. we created a login form to help us log in.
+first we will call the login mutation from userApiSlice that will send a request to the backend and set the cookie.
 
-then we go to index.js in front end and bring in our login screen.
+then we wwill call from the authslice setCredentials and then get the user stored the localstorage not the token.
 
-Sign in in your browser in the sign in page hen open the console you will see the submit showing it was successful.
+we will also use a package called react-toastify in your frontend that will give a message to the user if wrong credentials are inputed. 
 
-Next is to make the sign in page functional
+so lets get started by installing toastify  by running npm i react-toastify
+to use react-toastify we will go to our main app component i.e App.js and import toastContainer from react-toastify then we also import the css file. Then we put ToastContainer in our app component.
+
+Then in login screen we worked on the functionality of our login, we imported lots of components which we used. 
+after which we tried login in upon successful we will be redirected.
+
+Then we worked on making our sign in link in header.jsx dynamic so that when someone successfully signed in the name of the user will be displayed, we also added a drop-down nav for the user...containing profile page link and logout link.
+
+
+                       
