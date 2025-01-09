@@ -18,7 +18,9 @@ import PrivateRoute from './Components/PrivateRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+   
     <Route path="/" element={<App />}>
+    
       {/* Add more routes here */}
        <Route index={true} path="/" element={<HomeScreen/>} /> 
        <Route path="/product/:id" element={<ProductScreen/>} /> 
@@ -29,7 +31,9 @@ const router = createBrowserRouter(
        <Route path="" element={<PrivateRoute/>}> 
        <Route path="/shipping" element={<ShippingScreen/>} /> 
        </Route>
+      
     </Route>
+    
   )
 );
 

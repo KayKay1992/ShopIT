@@ -1,8 +1,4 @@
-Adding Private Route Component.
+Checkout step component.
+we will display the step we are into, we have sign in, checkout, shipping,  payment and place order for the different screens. 
 
-Now we are going to make our routes private the onces we dont want users to access if they are not logged in.
-first is the shipping route... currently even if u are not logged in you will access it. We are going to make it private. 
-
-we will go to component folder and create privateRoute.jsx, here we imported outlet and navigate from react router dom.
-
-then we go to index.js and usee it 
+we created a new component checkout steps.jsx, we imported Nav and and use it in creating our steps, we start using it in all our page steps routes.
