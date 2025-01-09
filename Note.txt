@@ -1,8 +1,8 @@
-Checkout Process part1 : Creating shipping screen.
-but before we create shipping screen, we will go to cartSlice in addition to cartitem  we will add the shhipping address because we want that to be saved and also set up a payment method .
+Adding Private Route Component.
 
-then we add a reducer action save shipping address.it was originally an empty object so we set it whatever becomes the payload.
+Now we are going to make our routes private the onces we dont want users to access if they are not logged in.
+first is the shipping route... currently even if u are not logged in you will access it. We are going to make it private. 
 
-Next we create a shipping screen and import sime functions and components.
+we will go to component folder and create privateRoute.jsx, here we imported outlet and navigate from react router dom.
 
-then we go to index.js and bring in our shipping screen for now later we will make it private.
+then we go to index.js and usee it 
