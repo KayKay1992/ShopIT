@@ -1,6 +1,3 @@
-Creating the Order Routes and Controller
+Create and Get Orders
 
-we created a new file in routes folder which we called order route. In controller folder we also created the orderController.js .
-After creating the both order routes and order controller we have to go to server.js to  bring in the orderRoute.
-
-then we go to postman and register and test all our order routes.
+We created functions in controllers for getMyOrders, get orders by Id and get my orders, addOrdersItem
