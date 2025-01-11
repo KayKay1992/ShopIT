@@ -1,4 +1,9 @@
-Checkout step component.
-we will display the step we are into, we have sign in, checkout, shipping,  payment and place order for the different screens. 
+PAYMENT SCREEN SCREEN.
 
-we created a new component checkout steps.jsx, we imported Nav and and use it in creating our steps, we start using it in all our page steps routes.
+Firstly we will go to cartslice and add savePaymentMethod, and export it to enable us use it.
+then we go to screen folder and add payment screen.
+After creating the payment screen we exported it and imported it to the index.js, we put it in the private route so that if you are not logged in you wont be able to access it. 
+
+To be able to redirect unregistered user back to the shipping page we used useEffect then we created a function submithandler which calls our savePaymentMethod function and then redirects the user to the place order page unpon clicking the proceeding to checkout button.
+
+to test, when you click the button open your browser devtools and check redux you will see payment method and paypal was choosing as default.
