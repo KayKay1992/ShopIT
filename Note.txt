@@ -1,3 +1,7 @@
-Create and Get Orders
+Creating API Slice and start Order Screen
 
-We created functions in controllers for getMyOrders, get orders by Id and get my orders, addOrdersItem
+We first craeted ordersApiSLice in slice folder where we craeted an action creator and create the createOrder mutation which we exported.
+
+then in cartSlice we added a function to claar cart items when we successfuly craete an order. this function will wipe all the items in our cart.
+
+then we added a place order screen which we exported and used in index.js in the private route.
