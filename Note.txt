@@ -1,7 +1,6 @@
-Creating API Slice and start Order Screen
+Creating Order and setting the ui
+we created the ui of the placeOrder screen 
+we displayed the step using the checkoutSteps functionality.
 
-We first craeted ordersApiSLice in slice folder where we craeted an action creator and create the createOrder mutation which we exported.
-
-then in cartSlice we added a function to claar cart items when we successfuly craete an order. this function will wipe all the items in our cart.
-
-then we added a place order screen which we exported and used in index.js in the private route.
+Then we get the shipping address, payment method and Order items and order summary and a button that handles the placeOrder.
+upon successful placing order this buton upon click takes us to order id route.
