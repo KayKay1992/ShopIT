@@ -16,7 +16,7 @@ router.get("/myorders", protect, getMyOrders);
 router.get("/", protect, admin, getOrders);
 
 //Route to get order by id
-router.get("/:id", protect,admin, getOderById);
+router.get("/:id", protect, getOderById);
 
 //Route to update order to paid 
 router.put("/:id/pay", protect, updateOrderToPaid);

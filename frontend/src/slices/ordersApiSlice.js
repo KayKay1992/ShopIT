@@ -5,15 +5,22 @@ import { ORDERS_URL } from "../constants";
 // action craetor for orderApiSlice
 
 export const ordersApiSlice = apiSlice.injectEndpoints({
-    endpoints: builder => ({
-        createOrder: builder.mutation({
-            query: (order) => ({
-            method: 'POST',
-            url: ORDERS_URL,
-            body: {...order}
-            })
-        })
-    })
-})
+  endpoints: (builder) => ({
+    createOrder: builder.mutation({
+      query: (order) => ({
+        method: "POST",
+        url: ORDERS_URL,
+        body: { ...order },
+      }),
+    }),
+    getOrdersDetails: builder.query({
+      query: (orderId) => ({
+        url: `${ORDERS_URL}/${orderId}`,
+      }),
+      keepUnusedDataFor: 5,
+    }),
+  }),
+});
 
-export const {useCreateOrderMutation} = ordersApiSlice
+export const { useCreateOrderMutation, useGetOrdersDetailsQuery } =
+  ordersApiSlice;

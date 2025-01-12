@@ -1,6 +1,9 @@
-Creating Order and setting the ui
-we created the ui of the placeOrder screen 
-we displayed the step using the checkoutSteps functionality.
+Checkout Process Part11: Order page/ Craearing Order detail Screen
+last video we were able to create the order and save it in the data base, and where able to redirect to /order/:id route.
+SO now we will be able to display order details in this page and also have a button to pay. 
 
-Then we get the shipping address, payment method and Order items and order summary and a button that handles the placeOrder.
-upon successful placing order this buton upon click takes us to order id route.
+now in ordersApiSlice we added function to the orderApislice this time getOrderDetails which enables us to dispaly the details of the order in orderDetailsScreen.
+
+Then we created orderDetailsScreen this screen displays he details of our order. then we imported and used it in Index.js in privateRoute. 
+
+in OrderRoute we made a correction in getOrderById route we made it protected only and remove admin.
