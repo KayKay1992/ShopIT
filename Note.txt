@@ -1,11 +1,6 @@
-USER PROFILE AND UPDATE 
+    ADMIN ROUTE COMPONENTS
 
-WE WANT TO LIST ON OUR PROFILE ALL THE ORDERS WEVE MADE:
-
-First we will update our user profile.
-we startup from userApiSlice where we will add a mutation to update a profile then we export useProfileMutation where we use it in our profile screen. we created Profilescreen.jsx
-so we add the profile screen at the index.jsx route file.
-
-secondly we want to show our orders.
-we will find all the users orders and return them. 
-in ordersApiSlice we will add the getMyorders querry. then we export it and use it in our profile screen
+    this component will only allow an admin to have access to some pages.
+    then we created an adminRoute component in frontend src.  the first admin screen we created is orderlist screen.
+    we imported adminRoute to index.jsx.
+    for admin dropdown we go to the header.jsx and add it.
