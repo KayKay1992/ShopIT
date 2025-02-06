@@ -1,4 +1,11 @@
-Paypal set up and order Paid.
+USER PROFILE AND UPDATE 
 
-in orderController, at updateOrdertopaid function get the order by findbyid method, w use the if sttatement to get the if there is an order else we throw an error. then we go paypal website and register. then copy the secret code to your .env file your paypal client id.
-then we added the paypal route in our backend so we did that in our server.js
+WE WANT TO LIST ON OUR PROFILE ALL THE ORDERS WEVE MADE:
+
+First we will update our user profile.
+we startup from userApiSlice where we will add a mutation to update a profile then we export useProfileMutation where we use it in our profile screen. we created Profilescreen.jsx
+so we add the profile screen at the index.jsx route file.
+
+secondly we want to show our orders.
+we will find all the users orders and return them. 
+in ordersApiSlice we will add the getMyorders querry. then we export it and use it in our profile screen
