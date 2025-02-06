@@ -1,9 +1,4 @@
-Checkout Process Part11: Order page/ Craearing Order detail Screen
-last video we were able to create the order and save it in the data base, and where able to redirect to /order/:id route.
-SO now we will be able to display order details in this page and also have a button to pay. 
+Paypal set up and order Paid.
 
-now in ordersApiSlice we added function to the orderApislice this time getOrderDetails which enables us to dispaly the details of the order in orderDetailsScreen.
-
-Then we created orderDetailsScreen this screen displays he details of our order. then we imported and used it in Index.js in privateRoute. 
-
-in OrderRoute we made a correction in getOrderById route we made it protected only and remove admin.
+in orderController, at updateOrdertopaid function get the order by findbyid method, w use the if sttatement to get the if there is an order else we throw an error. then we go paypal website and register. then copy the secret code to your .env file your paypal client id.
+then we added the paypal route in our backend so we did that in our server.js
