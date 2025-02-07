@@ -10,7 +10,9 @@ import {
 } from "react-bootstrap";
 import Message from "../Components/Message";
 import Loader from "../Components/Loader";
-import { useGetOrdersDetailsQuery } from "../slices/ordersApiSlice";
+import { useGetOrdersDetailsQuery, useDeliverOrderMutation, usePayOrderMutation } from "../slices/ordersApiSlice";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 function OrderDetailScreen() {
   const { id: orderId } = useParams();
@@ -20,6 +22,31 @@ function OrderDetailScreen() {
     error,
     isLoading,
   } = useGetOrdersDetailsQuery(orderId);
+  const [deliverOrder, { isLoading: loadingDelivered }] = useDeliverOrderMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const [payOrder, { isLoading: loadingPaid }] = usePayOrderMutation();
+
+  const payOrderHandler = async () => {
+    try{
+      await payOrder(orderId);
+      refetch();
+      toast.success("Order paid successfully!");
+    }catch(err){
+      toast.error(err?.data?.message || err.message);
+    }
+  };
+
+  const deliverOrderHandler = async () =>{
+    try{
+      await deliverOrder(orderId);
+      refetch();
+      toast.success("Order delivered successfully!");
+    }catch(err){
+      toast.error(err?.data?.message || err.message);
+    }
+  }
   return isLoading ? (
     <Loader />
   ) : error ? (
@@ -117,7 +144,35 @@ function OrderDetailScreen() {
                     </Row>
                 </ListGroup.Item>
                 {/*PAY ORDER BUTTON PLACEHOLDER*/}
+                {loadingPaid && <Loader/>}
+                {userInfo && userInfo.isAdmin && !order.isDelivered && !order.isPaid && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="btn btn-block"
+                      disabled={loadingPaid}
+                      onClick={payOrderHandler}
+                    >
+                      Mark As Paid
+                    </Button>
+                  </ListGroup.Item>
+                )}
                 {/*MARK AS DELIVERED PLACEHOLDER*/}
+                {loadingDelivered && <Loader/>}
+                {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="btn btn-block"
+                      disabled={loadingDelivered}
+                      onClick={deliverOrderHandler}
+                    >
+                      Mark As Delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
                </ListGroup>
         </Card>
         </Col>

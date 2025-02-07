@@ -1,7 +1,6 @@
-LIST ORDERS FOR ADMIN
+Pay and Deliver Order Status Updated to paid and delievered
 
-We go to order controller and write function for get orders, this function will help in getting all orders for the admin.
-
-then we go to frontend oredrs api slice where we will add getorders action creator, then we export it.
-
-Then we go to orderslist screen and import it and import order things.
+Now we want the admin to be able to mark the order as delivered. 
+> We will go to orderController and write function for updateOrdertoDelivered function we already have one for updateOrderToPaid. 
+> Then we go to orderApislice and add mutations for deliverorder and payorder which we exported.
+> then we use this mutations in OrderdetailsScreen to update the order to paid and delivered.
