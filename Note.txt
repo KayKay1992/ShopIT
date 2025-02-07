@@ -1,6 +1,3 @@
-Pay and Deliver Order Status Updated to paid and delievered
+List Products For Admin.
 
-Now we want the admin to be able to mark the order as delivered. 
-> We will go to orderController and write function for updateOrdertoDelivered function we already have one for updateOrderToPaid. 
-> Then we go to orderApislice and add mutations for deliverorder and payorder which we exported.
-> then we use this mutations in OrderdetailsScreen to update the order to paid and delivered.
+We created an admin productlist screen where we get all the products list for the admin to view and also a button for edit and delete we passed this screen to index.js
