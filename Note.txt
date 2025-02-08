@@ -1,3 +1,11 @@
-List Products For Admin.
+Creating Products
 
-We created an admin productlist screen where we get all the products list for the admin to view and also a button for edit and delete we passed this screen to index.js
+we will be able to create a new product we will start from backend first. 
+we created a new endpoint in productController to create a new product. then we save it and export.
+
+then we create a route in the product route.
+>then we go to ptoduct api slice and create a mutation called createProduct and export it.
+> then we go to product list screen and bring in our useCreateProductMutation 
+
+If you are unable to create a new product product when you click on create Product button try to log out and log in again as admin.
+
