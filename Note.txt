@@ -1,8 +1,6 @@
-Edit Product.
-
-Now after creating our product with sample data what we will do is now to edit it. so we are going to work on edit funtionality.
-> in productController we created updateproduct functtion. this is the backened functionality that enables us to update an already created product.
-> in productRoute we created Route to update a  product. 
-> for front end, for slice at productApislice we created updateproduct mutation which we exported. 
-> we created a productEditScreen where we use the updateProductmutation to update our product, after creating our editproduct screen we then register it in our frontend route that is in index.js.
-
+Multer and image upload endpoint for backend.
+we are able to edit a product now, but still unable to upload image, now we want to work on that we want to use a package called multer.
+so install multer in the root directory by running npm i multer
+then we go into our backend and create a new route file called uploadRoute.js. create a folder at the root directory called upload. this is where everything uploaded in our site will save.
+after creating our uploadRoute we will go to server.js and bring in our upload route and use it.
+Then we need to make our upload file static, for this we need to import path from path at the op of server.js file.

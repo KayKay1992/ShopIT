@@ -1,4 +1,5 @@
 
+import path from 'path';
 import cookieParser from 'cookie-parser';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -8,6 +9,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import productRoute from './routes/productRoute.js'
 import userRoute from './routes/userRoute.js'
 import orderRoute from './routes/orderRoute.js'
+import uploadRoutes from './routes/uploadRoutes.js';
 const port = process.env.PORT || 5000 ;
 
 connectDB(); // Connect to the MongoDB database
@@ -34,6 +36,14 @@ app.use('/api/users', userRoute);
 
 // Route to get all orders
 app.use('/api/orders', orderRoute);
+
+//Route to upload images
+
+app.use('/api/upload', uploadRoutes);
+
+//making our upload file a  Static files
+const __dirname = path.resolve()
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Error handling middleware
 
