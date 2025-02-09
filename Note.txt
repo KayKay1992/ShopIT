@@ -1,11 +1,8 @@
-Creating Products
+Edit Product.
 
-we will be able to create a new product we will start from backend first. 
-we created a new endpoint in productController to create a new product. then we save it and export.
-
-then we create a route in the product route.
->then we go to ptoduct api slice and create a mutation called createProduct and export it.
-> then we go to product list screen and bring in our useCreateProductMutation 
-
-If you are unable to create a new product product when you click on create Product button try to log out and log in again as admin.
+Now after creating our product with sample data what we will do is now to edit it. so we are going to work on edit funtionality.
+> in productController we created updateproduct functtion. this is the backened functionality that enables us to update an already created product.
+> in productRoute we created Route to update a  product. 
+> for front end, for slice at productApislice we created updateproduct mutation which we exported. 
+> we created a productEditScreen where we use the updateProductmutation to update our product, after creating our editproduct screen we then register it in our frontend route that is in index.js.
 
