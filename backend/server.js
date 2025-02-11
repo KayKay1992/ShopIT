@@ -9,7 +9,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import productRoute from './routes/productRoute.js'
 import userRoute from './routes/userRoute.js'
 import orderRoute from './routes/orderRoute.js'
-import uploadRoutes from './routes/uploadRoutes.js';
+import uploadRoutes from './routes/uploadRoute.js';
 const port = process.env.PORT || 5000 ;
 
 connectDB(); // Connect to the MongoDB database

@@ -34,7 +34,8 @@ function Header() {
     <header>
       <Navbar bg="dark" expand="lg" variant="dark" collapseOnSelect>
         <Container>
-          <Navbar.Brand>ShopIT</Navbar.Brand>
+
+          <Navbar.Brand href="/">ShopIT</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
