@@ -36,7 +36,8 @@ const createProduct = asyncHandler(async (req, res) => {
 
 const updateProduct = asyncHandler(async (req, res) => {
   // update product
-  const {name, price, description, image, brand, category, countInStock, } = req.body;
+  const { name, price, description, image, brand, category, countInStock } =
+    req.body;
   const product = await Product.findById(req.params.id);
   if (product) {
     product.name = name || product.name;
@@ -48,10 +49,23 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.countInStock = countInStock || product.countInStock;
     const updatedProduct = await product.save();
     res.json(updatedProduct);
-  }else{
+  } else {
+    res.status(404);
+    throw new Error("Resource not found");
+  }
+});
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  if (product) {
+      await Product.deleteOne({
+        _id: product._id
+      
+      });
+      res.status(200).json({ message: "Product deleted successfully." });
+  } else {
     res.status(404);
     throw new Error("Resource not found");
   }
 });
 
-export { getProducts, getProductById, createProduct, updateProduct }; // Export your functions for use in your ProductRoutes.js file.
+export { getProducts, getProductById, createProduct, updateProduct, deleteProduct }; // Export your functions for use in your ProductRoutes.js file.

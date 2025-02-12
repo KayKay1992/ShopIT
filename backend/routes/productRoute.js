@@ -3,6 +3,7 @@ const router = express.Router();
 // import products from '../data/products.js';
 import {
   createProduct,
+  deleteProduct,
   getProductById,
   getProducts,
   updateProduct,
@@ -20,5 +21,8 @@ router.put("/:id", protect, admin, updateProduct);
 
 //Route to create a new product
 router.post("/", protect, admin, createProduct);
+
+//Route to delete a product
+router.delete("/:id", protect, admin, deleteProduct);
 
 export default router;

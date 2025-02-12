@@ -1,7 +1,6 @@
-Upload Product Image Frontend
+Delete product functionality
 
-in productAPISLICE we added a mutation of upload product image where we query the data and specify the uploadurl. we added the the uploadurl in the constants file.
-then we use it in product edit screen. 
-where we were able to render our image upload successfully.
-
-we fixed a little bug in server.js and added a link to our logo in header.jsx component.
+> in productController we added delete product functionality 
+>then in productRoute we added a route for deleting product specifically for admin so it was protected.
+>in fronted in productApiSlice we added a delete product mutation which we queried from productId we exported it.
+> and use it in productlistScreen for deleteProductHandler function 
