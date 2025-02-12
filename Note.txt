@@ -1,6 +1,4 @@
-Delete product functionality
+Backend User Routes and their functionality
 
-> in productController we added delete product functionality 
->then in productRoute we added a route for deleting product specifically for admin so it was protected.
->in fronted in productApiSlice we added a delete product mutation which we queried from productId we exported it.
-> and use it in productlistScreen for deleteProductHandler function 
+We want to be able to show the the users to the admin. Able to manage the users as the admin. 
+So we go to userController, so now we want to get users, get users by Id delete and update users.
