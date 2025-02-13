@@ -1,5 +1,3 @@
+Create Reviews Backend.
 
-To update user functionality for frontend.
-
-we created getuserdetails and update user actions in userApiSlice aand exported it. we then created new screen for userEditScreen and make sure it is registered in index.js file.
-in usereditscreen this is where we write function to enable us get and edit users and we also fix small bug in userListScreen.
+We added a createProductReview functionality in product controller then we added the route for it in the product route. this is for backend the next is to create the frontend.
