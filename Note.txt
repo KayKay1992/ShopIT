@@ -1,5 +1,3 @@
-    LIST USERS FOR admin
+Delete users by the admin 
 
-Now we go to frontend, usersApiSlice and add getUsers query. 
-which we exported and used in a new screen (userlistscreen), which is a screen where we list users for the admin. and export the it while registreing it in our index.js file.
-
+in usersApiSlice we created deleteUser mutation and exported it which we used in userlistScreen in writing delete handler function
