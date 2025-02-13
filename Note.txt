@@ -1,4 +1,5 @@
-Backend User Routes and their functionality
+    LIST USERS FOR admin
 
-We want to be able to show the the users to the admin. Able to manage the users as the admin. 
-So we go to userController, so now we want to get users, get users by Id delete and update users.
+Now we go to frontend, usersApiSlice and add getUsers query. 
+which we exported and used in a new screen (userlistscreen), which is a screen where we list users for the admin. and export the it while registreing it in our index.js file.
+
