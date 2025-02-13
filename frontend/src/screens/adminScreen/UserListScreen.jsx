@@ -51,8 +51,8 @@ function UserListScreen() {
             )}</td>
          
             <td>
-            <Nav.Link as={Link} to={`admin/user/${user._id}/edit`}>
-                  <Button variant="info">
+            <Nav.Link as={Link} to={`/admin/user/${user._id}/edit`}>
+                  <Button variant="light" className='btn-sm'>
                     <FaEdit />
                   </Button>
                 </Nav.Link>

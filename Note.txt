@@ -1,3 +1,5 @@
-Delete users by the admin 
 
-in usersApiSlice we created deleteUser mutation and exported it which we used in userlistScreen in writing delete handler function
+To update user functionality for frontend.
+
+we created getuserdetails and update user actions in userApiSlice aand exported it. we then created new screen for userEditScreen and make sure it is registered in index.js file.
+in usereditscreen this is where we write function to enable us get and edit users and we also fix small bug in userListScreen.
