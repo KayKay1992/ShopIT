@@ -1,3 +1,16 @@
-Create Reviews FrontEnd.
+Pagaination of the  products
 
-Having created yhe backend we now create the frontend for this we start from the slice  producctApiSlice and we added createReview mutation. we exported it and used it in the productScreen to create a review for a particular product.
+first we have to edit the back end 
+for this we head to the product controller.
+
+we head to getProducts function and get the page size variable. 
+and we create a page variable and set the to the page number in the url.
+then we get the total numbers of pages using countDocuments method.
+
+we go to the frontend at homescreen and change the products passing only data which contains both the products and the pages
+
+in productApiSlice we destructured the query in get products query action. passing the pageNumber, adding params to it passing the page number also.
+
+to be able to move to different pages we added a new homepage route in index.js moving to pages of different numbers.
+
+in homescreen also we imported useparams from react-router-dom and initialized it in pagenumber object.
