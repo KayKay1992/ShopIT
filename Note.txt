@@ -1,3 +1,3 @@
-Create Reviews Backend.
+Create Reviews FrontEnd.
 
-We added a createProductReview functionality in product controller then we added the route for it in the product route. this is for backend the next is to create the frontend.
+Having created yhe backend we now create the frontend for this we start from the slice  producctApiSlice and we added createReview mutation. we exported it and used it in the productScreen to create a review for a particular product.
