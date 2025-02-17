@@ -3,11 +3,19 @@ import Product from "../models/productModel.js";
 
 const getProducts = asyncHandler(async (req, res) => {
   //pagination
-  const pageSize = 4;
+  const pageSize = 1;
   const page = Number(req.query.pageNumber) || 1;
-  const totalProducts = await Product.countDocuments();
+  // keyword search
+  const keyword = req.query.keyword? {
+    name: {
+      $regex: req.query.keyword,
+      $options: "i",// optional setting to make it case insensitive
+    }
+  } : {};
+
+  const totalProducts = await Product.countDocuments({...keyword})
   // Fetch products from your database
-  const products = await Product.find({})
+  const products = await Product.find({...keyword})
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   res.json({

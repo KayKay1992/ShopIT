@@ -1,7 +1,7 @@
-Pagination for Orderlistscreen.
-we follow same step as in 2 previous admin screes.
-for backened we worked on orderController at getOrders function 
-then we registered thwe route in index.js 
-for frontend we worked on getOrders query. 
-then we worked on paginating component where we registered isordered path, 
-then we finally used the pageNumber via useParams in orderlistscreen we also used the paginating component.
+SEARCH AND FILTER PRODUCTS FUNCTIONALITY
+
+In productController we added the keyword functionality for searching any item in getproducts function and we registered th search route using the home screen route at index.js.
+in paginating component we registered the keyword prop and restructured the component.
+In the productApiSlice we added the keyword to the query object and params object at getProducts query.
+in the home screen we introduced the keyword to useparams object and paginating component renderin.
+
