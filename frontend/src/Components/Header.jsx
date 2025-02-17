@@ -4,6 +4,7 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
+import SearchBox from "./SearchBox";
 
 function Header() {
   const { cartItems } = useSelector((state) => state.cart);
@@ -39,6 +40,7 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <SearchBox/>
               <Nav.Link href="/cart">
                 <FaShoppingCart size={24} /> Cart{" "}
                 {cartItems.length > 0 && (

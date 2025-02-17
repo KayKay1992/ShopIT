@@ -1,5 +1,5 @@
 import {Row, Col} from 'react-bootstrap'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
 import Loader from '../Components/Loader';
@@ -16,6 +16,9 @@ function HomeScreen() {
   const { data, isLoading, error } = useGetProductsQuery({keyword, pageNumber});
   return (
     <>
+    {keyword && (<Link to='/' className='btn btn-light mb-4'>
+    Go Back 
+    </Link>)}
     {isLoading ? (
       <Loader/>
     ) : error ? (<Message variant='danger'>{error?.data?.message || error.error}</Message>) : (

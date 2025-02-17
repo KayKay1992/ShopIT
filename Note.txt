@@ -1,7 +1,8 @@
-SEARCH AND FILTER PRODUCTS FUNCTIONALITY
+SEARCH BOX COMPONENT: 
 
-In productController we added the keyword functionality for searching any item in getproducts function and we registered th search route using the home screen route at index.js.
-in paginating component we registered the keyword prop and restructured the component.
-In the productApiSlice we added the keyword to the query object and params object at getProducts query.
-in the home screen we introduced the keyword to useparams object and paginating component renderin.
+The component will enable us to see where we can search an item without searching through the route.
+
+we created the searchBox component where the frontend search functionality is implemented 
+then we passed this component into the header component where it is displayed in the header section
+Then at the homeScreen the goback button is implemented to enable use go back to homepage
 

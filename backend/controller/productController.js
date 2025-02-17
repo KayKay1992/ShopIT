@@ -3,7 +3,7 @@ import Product from "../models/productModel.js";
 
 const getProducts = asyncHandler(async (req, res) => {
   //pagination
-  const pageSize = 1;
+  const pageSize = 12;
   const page = Number(req.query.pageNumber) || 1;
   // keyword search
   const keyword = req.query.keyword? {
