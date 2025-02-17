@@ -123,19 +123,71 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 //@desc Get all users
 //@route GET /api/users
 //@access private/Admin
+// const getUsers = asyncHandler(async (req, res) => {
+//   try{
+//    //pagination
+//    const pageSize = 2;
+//    const page = Number(req.query.pageNumber) || 1;
+//    const totalUsers = await User.countDocuments();
+//   const users = await User.find({})
+//   .limit(pageSize)
+//   .skip(pageSize * (page - 1));
+//   res.status(200).json({
+//     users,
+//     page,
+//     pages: Math.ceil(totalUsers / pageSize),
+//     totalUsers,
+// })
+//   }catch(error){
+//     res.status(500).json({message: error.message});
+//   }
+
+// });
 const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({});
-  res.status(200).json(users);
+  try {
+    // Pagination setup
+    const pageSize = 2;
+    const page = Number(req.query.pageNumber) || 1;
+
+    // Total number of users
+    const totalUsers = await User.countDocuments();
+
+    // Calculate total pages
+    const totalPages = Math.ceil(totalUsers / pageSize);
+
+    // Ensure page number does not exceed the total pages
+    if (page > totalPages && totalPages > 0) {
+      return res
+        .status(400)
+        .json({ message: "Page number exceeds total pages" });
+    }
+
+    // Fetch users for the current page with pagination
+    const users = await User.find({})
+      .limit(pageSize) // Limit to the number of users per page
+      .skip(pageSize * (page - 1)); // Skip the appropriate number of users based on the page
+
+    // Respond with users and pagination info
+    res.status(200).json({
+      users,
+      page,
+      pages: totalPages, // Total pages
+      totalUsers, // Total number of users
+    });
+  } catch (error) {
+    console.error(error); // Log the error for debugging
+    res.status(500).json({ message: error.message });
+  }
 });
 
 //@desc Get  user by id
 //@route GET /api/users/:id
 //@access private/Admin
 const getUserById = asyncHandler(async (req, res) => {
-const user = await User.findById(req.params.id).select('-password');
+  const user = await User.findById(req.params.id).select("-password");
   if (user) {
     res.status(200).json(user);
-  }else{
+  } else {
     res.status(404);
     throw new Error("User not found");
   }
@@ -152,7 +204,7 @@ const deleteUser = asyncHandler(async (req, res) => {
       res.status(403);
       throw new Error("Cannot delete an admin user");
     }
-    await user.deleteOne({_id: user._id});
+    await user.deleteOne({ _id: user._id });
     res.status(201).json({ message: "User deleted" });
   } else {
     res.status(404);
@@ -178,7 +230,7 @@ const updateUser = asyncHandler(async (req, res) => {
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
     });
-  }else{
+  } else {
     res.status(404);
     throw new Error("User not found");
   }

@@ -1,16 +1,8 @@
-Pagaination of the  products
+Paginate component: And paginating our admin pages userlist and productlist.
+we created a paginating component, and use it to paginate our admin pages. the userslist and productlist.
+in productcontroller we wrote the backend function for paginating productlist we did same too for userslist. 
+in index.js we created and registered the route for pagination of productlist using the pagenumber and did thesame for userlist too.
 
-first we have to edit the back end 
-for this we head to the product controller.
+inusersApiSlice, at getUsers query we write the query for getting all users using pagenumber this is for pagination. as we did in getting and paginating the productlist.
 
-we head to getProducts function and get the page size variable. 
-and we create a page variable and set the to the page number in the url.
-then we get the total numbers of pages using countDocuments method.
-
-we go to the frontend at homescreen and change the products passing only data which contains both the products and the pages
-
-in productApiSlice we destructured the query in get products query action. passing the pageNumber, adding params to it passing the page number also.
-
-to be able to move to different pages we added a new homepage route in index.js moving to pages of different numbers.
-
-in homescreen also we imported useparams from react-router-dom and initialized it in pagenumber object.
+in both userslistScreen and productlistScreen we use the paginating component which we created to display our paginating function importing useparams and using it to register our pageNumber.

@@ -4,6 +4,10 @@ import ProductCard from '../Components/ProductCard'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
 import Loader from '../Components/Loader';
 import Message from '../Components/Message';
+import Paginating from '../Components/Paginating';
+
+
+
 
 
 
@@ -24,6 +28,10 @@ function HomeScreen() {
             </Col>
           ))}
       </Row>
+      <Paginating
+       pages = {data.pages}
+       page={data.page}
+      />
       </>
     )}
    
