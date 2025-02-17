@@ -114,6 +114,20 @@ const createProductReview = asyncHandler(async (req, res) => {
   }
 });
 
+const getTopProducts = asyncHandler(async (req, res) => {
+  try {
+    // Fetch top 3 products sorted by rating in descending order
+    const products = await Product.find({}) // Use find() to retrieve multiple products
+      .sort({ rating: -1 }) // Sort products by rating in descending order
+      .limit(3); // Limit the result to top 3 products
+
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
 export {
   getProducts,
   getProductById,
@@ -121,4 +135,5 @@ export {
   updateProduct,
   deleteProduct,
   createProductReview,
+  getTopProducts, // Add this line for the top products route.
 }; // Export your functions for use in your ProductRoutes.js file.

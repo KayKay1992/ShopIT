@@ -20,7 +20,6 @@ function ProductEditSreen() {
   const [countInStock, setCountInStock] = useState(0);
   const [brand, setBrand] = useState("");
   const [category, setCategory] = useState("");
- 
 
   const {
     data: product,
@@ -57,7 +56,6 @@ function ProductEditSreen() {
       countInStock,
       brand,
       category,
-      
     };
     const result = await updateProduct(updatedProduct);
     if (result.error) {

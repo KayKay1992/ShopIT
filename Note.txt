@@ -1,8 +1,8 @@
-SEARCH BOX COMPONENT: 
+Product Carousel Implementation
 
-The component will enable us to see where we can search an item without searching through the route.
-
-we created the searchBox component where the frontend search functionality is implemented 
-then we passed this component into the header component where it is displayed in the header section
-Then at the homeScreen the goback button is implemented to enable use go back to homepage
+In ProductController we created getTopProduct function this is whwere we sort the 3 best product.
+We then registered the get topproduct route in productRoute. we have to register it at the top above every route with id.
+Then we created productCarousel's component and exported it.
+in productApiSlice we created getTopProducts query
+we then use the component in the HomeScreen if no keyword we show the productCarousel component
 

@@ -7,12 +7,17 @@ import {
   deleteProduct,
   getProductById,
   getProducts,
+  getTopProducts,
   updateProduct,
 } from "../controller/productController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
 
 //Route to get all products
 router.get("/", getProducts);
+
+//Route to get top rated products
+
+router.get("/top", getTopProducts);
 
 //Route to get a single product
 router.get("/:id", getProductById);
