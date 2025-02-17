@@ -108,11 +108,35 @@ const updateOrderToDelivered =asyncHandler ( async (req, res) => {
 // Update Get all Orders
 //@route GET/api/orders
 //@access protected/admin
-const getOrders =asyncHandler ( async (req, res) => {
-    const orders = await Order.find({}).populate('user', 'id name email');
-    res.status(200).json(orders);
-   
-})
+const getOrders = asyncHandler(async (req, res) => {
+    try {
+      const pageSize = 4; // Number of orders per page
+      const page = Number(req.query.pageNumber) || 1; // Page number from the query string (default to 1)
+      
+      // Get the total number of orders
+      const totalOrders = await Order.countDocuments();
+      
+      // Get the orders for the current page, populate user details and apply pagination
+      const orders = await Order.find({})
+        .populate('user', 'id name email') // Populate user details
+        .limit(pageSize) // Limit the number of orders per page
+        .skip(pageSize * (page - 1)); // Skip the orders of previous pages based on the current page number
+      
+      // Calculate total pages
+      const totalPages = Math.ceil(totalOrders / pageSize);
+  
+      // Send the response with orders, current page, total pages, and total orders
+      res.status(200).json({
+        orders,
+        page,
+        pages: totalPages,
+        totalOrders,
+      });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+  
 
 export { addOrderItems, getMyOrders, getOderById, updateOrderToPaid, updateOrderToDelivered, getOrders }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-bootstrap/Pagination';
 
-function Paginating({ pages, page, isAdmin = false, isUserList = false}) {
+function Paginating({ pages, page, isAdmin = false, isUserList = false, isOrderList = false}) {
   if (pages <= 1) return null; // Early return if no pagination is needed
 
   return (
@@ -15,7 +15,11 @@ function Paginating({ pages, page, isAdmin = false, isUserList = false}) {
                     path = `/admin/productlist/${pageNumber}`;
                   } else if (isUserList) {
                     path = `/admin/userlist/${pageNumber}`;
-                  } else {
+                  }
+                  else if (isOrderList) {
+                    path = `/admin/orderlist/${pageNumber}`;
+                  }
+                   else {
                     path = `/page/${pageNumber}`;
                   }
         return (

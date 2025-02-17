@@ -1,8 +1,7 @@
-Paginate component: And paginating our admin pages userlist and productlist.
-we created a paginating component, and use it to paginate our admin pages. the userslist and productlist.
-in productcontroller we wrote the backend function for paginating productlist we did same too for userslist. 
-in index.js we created and registered the route for pagination of productlist using the pagenumber and did thesame for userlist too.
-
-inusersApiSlice, at getUsers query we write the query for getting all users using pagenumber this is for pagination. as we did in getting and paginating the productlist.
-
-in both userslistScreen and productlistScreen we use the paginating component which we created to display our paginating function importing useparams and using it to register our pageNumber.
+Pagination for Orderlistscreen.
+we follow same step as in 2 previous admin screes.
+for backened we worked on orderController at getOrders function 
+then we registered thwe route in index.js 
+for frontend we worked on getOrders query. 
+then we worked on paginating component where we registered isordered path, 
+then we finally used the pageNumber via useParams in orderlistscreen we also used the paginating component.
