@@ -15,6 +15,7 @@ import {
   useGetProductDetailsQuery,
   useCreateReviewMutation,
 } from "../slices/productsApiSlice";
+import Meta from '../Components/Meta';
 import Rating from "../Components/Rating";
 import Loader from "../Components/Loader";
 import Message from "../Components/Message";
@@ -79,6 +80,7 @@ function ProductScreen() {
         </Message>
       ) : (
         <>
+        <Meta title={product.name} />
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />

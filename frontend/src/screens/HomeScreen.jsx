@@ -6,6 +6,7 @@ import Loader from '../Components/Loader';
 import Message from '../Components/Message';
 import Paginating from '../Components/Paginating';
 import ProductCarousel from '../Components/ProductCarousel';
+import Meta from '../Components/Meta';
 
 
 
@@ -25,6 +26,7 @@ function HomeScreen() {
       <Loader/>
     ) : error ? (<Message variant='danger'>{error?.data?.message || error.error}</Message>) : (
       <>
+        <Meta title='ShopIt Now'/>
       <h1>Latest Products </h1>
       <Row>
           {data.products.map(product => (

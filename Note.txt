@@ -1,8 +1,9 @@
-Product Carousel Implementation
+Page Titles
 
-In ProductController we created getTopProduct function this is whwere we sort the 3 best product.
-We then registered the get topproduct route in productRoute. we have to register it at the top above every route with id.
-Then we created productCarousel's component and exported it.
-in productApiSlice we created getTopProducts query
-we then use the component in the HomeScreen if no keyword we show the productCarousel component
+Changing the titles upon navigation to different pages/screens.
+we will do this by installing a package react-helmet-async in frontend directory.
+npm i react-helmet-async.
+
+page title functionality where we customize the titles of our page.
+and we organise our project.
 

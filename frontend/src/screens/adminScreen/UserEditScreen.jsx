@@ -48,6 +48,7 @@ function UserEditSreen() {
       toast.error(result.error);
     } else {
       toast.success("User updated successfully");
+      refetch();  // Refetch user details after update to display the updated data immediately.
       navigate("/admin/userList");
     }
   };

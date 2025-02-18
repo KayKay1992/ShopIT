@@ -155,6 +155,7 @@ function ProductEditSreen() {
               />
           
             </Form.Group>
+            {loadingUploadImage && <Loader/>}
 
             {/* File input for uploading image
               <Form.Control
