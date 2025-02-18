@@ -153,6 +153,7 @@ function ProductEditSreen() {
                 type="file"
                 onChange={uploadFileHandler} // Handling file upload
               />
+          
             </Form.Group>
 
             {/* File input for uploading image
