@@ -44,6 +44,8 @@ const getMyOrders =asyncHandler ( async (req, res) => {
     const orders = await Order.find({
         user: req.user._id,
     });
+    
+
     res.status(200).json(orders);
    
 })
@@ -110,7 +112,7 @@ const updateOrderToDelivered =asyncHandler ( async (req, res) => {
 //@access protected/admin
 const getOrders = asyncHandler(async (req, res) => {
     try {
-      const pageSize = 4; // Number of orders per page
+      const pageSize = 12; // Number of orders per page
       const page = Number(req.query.pageNumber) || 1; // Page number from the query string (default to 1)
       
       // Get the total number of orders
@@ -118,7 +120,9 @@ const getOrders = asyncHandler(async (req, res) => {
       
       // Get the orders for the current page, populate user details and apply pagination
       const orders = await Order.find({})
-        .populate('user', 'id name email') // Populate user details
+        .populate('user', 'id name email')
+         // Populate user details
+         .sort({ _id: -1 }) // Sort by _id in descending order (newest first)
         .limit(pageSize) // Limit the number of orders per page
         .skip(pageSize * (page - 1)); // Skip the orders of previous pages based on the current page number
       

@@ -99,10 +99,10 @@ function OrderDetailScreen() {
                           <br />
                           <span>Quantity: {item.qty}</span>
                           <br />
-                          <span>Price: ${item.price}</span>
+                          <span>Price: #{item.price}</span>
                         </Col>
                         <Col md={3}>
-                        {item.qty} x {item.price} = ${item.price * item.qty}
+                        {item.qty} x {item.price} = #{item.price * item.qty}
                         </Col>
                     </Row>
                     </ListGroup.Item>
@@ -120,25 +120,25 @@ function OrderDetailScreen() {
                     <Row>
                         <Col>Items</Col>
                         <Col>
-                          ${order.itemsPrice.toFixed(2)}
+                          #{order.itemsPrice.toFixed(2)}
                         </Col>
                     </Row>
                     <Row>
                         <Col>Shipping</Col>
                         <Col>
-                          ${order.shippingPrice.toFixed(2)}
+                          #{order.shippingPrice.toFixed(2)}
                         </Col>
                     </Row>
                     <Row>
                         <Col>Tax</Col>
                         <Col>
-                          ${order.taxPrice.toFixed(2)}
+                          #{order.taxPrice.toFixed(2)}
                         </Col>
                     </Row>
                     <Row>
                         <Col>Total</Col>
                         <Col>
-                          ${order.totalPrice.toFixed(2)}
+                          #{order.totalPrice.toFixed(2)}
                         </Col>
                     </Row>
                 </ListGroup.Item>

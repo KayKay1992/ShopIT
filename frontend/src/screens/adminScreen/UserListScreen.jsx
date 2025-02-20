@@ -60,6 +60,7 @@ function UserListScreen() {
           <tr>
             <th>ID</th>
             <th>NAME</th>
+            <th>PHONE</th>
             <th>EMAIL</th>
             <th>ADMIN</th>
             <th></th>
@@ -71,6 +72,7 @@ function UserListScreen() {
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
+                <td>{user.phone}</td>
                 <td>
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </td>

@@ -1,9 +1,10 @@
-Page Titles
+final Touches
 
-Changing the titles upon navigation to different pages/screens.
-we will do this by installing a package react-helmet-async in frontend directory.
-npm i react-helmet-async.
+favicon changed
+items sorted. recent products, orders and users are rendered at the top.
+currency changed to naira
+phone number added to user model and user info.
+Tax percentage is changed to zero (0) no tax
 
-page title functionality where we customize the titles of our page.
-and we organise our project.
+
 

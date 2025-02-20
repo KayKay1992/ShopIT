@@ -30,10 +30,11 @@ function PaymentScreen() {
         <CheckoutSteps step1 step2 step3/>
         <Form onSubmit={submitHandler}>
             <Form.Group as={Col} controlId="paymentMethod" className="my-2">
-                <Form.Label>Payment Method</Form.Label>
+                <Form.Label>Payment Method: Please Choose Payment on Delivery</Form.Label>
                 <Form.Control as="select" value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
                     <option value="PayPal">PayPal</option>
                     <option value="Credit Card">Credit Card</option>
+                    <option value="Payment on Delivery">Payment on Delivery</option>
                 </Form.Control>
             </Form.Group>
             <Button type="submit" variant="primary">

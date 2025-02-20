@@ -10,10 +10,13 @@ export const updateCart = (state) => {
      state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 10)
 
      //calculate the total tax(15% tax)
-     state.taxPrice = addDecimals(Number((0.15 * state.itemsPrice).toFixed(2)))
+     state.taxPrice = addDecimals(Number((0 * state.itemsPrice).toFixed(2)))
 
      //calculate the total price.
-     state.totalPrice = addDecimals(Number(state.itemsPrice) + Number(state.taxPrice) + Number(state.shippingPrice));
+     state.totalPrice = addDecimals(Number(state.itemsPrice)
+      + Number(state.taxPrice)
+       + 
+      Number(state.shippingPrice));
 
      //Saving our cart in localstorage.
      localStorage.setItem('cart', JSON.stringify(state));

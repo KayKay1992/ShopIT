@@ -11,6 +11,7 @@ import {toast} from 'react-toastify'
 function RegisterScreen() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('')
 
@@ -38,7 +39,7 @@ function RegisterScreen() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         //checking if all fields are filled.
-        if(!name ||!email ||!password ||!confirmPassword){
+        if(!name ||!email ||!phone ||!password ||!confirmPassword){
             toast.error("All fields are required");
             return;
         }
@@ -54,7 +55,7 @@ function RegisterScreen() {
         }else {
                // TODO: Login logic here
       try{
-        const res = await register( {name,email, password, confirmPassword}).unwrap();
+        const res = await register( {name,email,phone, password, confirmPassword}).unwrap();
         dispatch(setCredentials({...res}));
         navigate(redirect);
       }catch(err){
@@ -75,6 +76,10 @@ function RegisterScreen() {
          <Form.Group controlId="email" className="my-3">
            <Form.Label>Email</Form.Label>
            <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+         </Form.Group>
+         <Form.Group controlId="phone" className="my-3">
+           <Form.Label>Phone No.</Form.Label>
+           <Form.Control type="phone" placeholder="Enter phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
          </Form.Group>
          <Form.Group controlId="password" className="my-3">
            <Form.Label>Password</Form.Label>

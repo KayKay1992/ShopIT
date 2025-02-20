@@ -13,6 +13,7 @@ import {
 function UserEditSreen() {
   const { id: userId } = useParams();
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState("");
 
@@ -29,6 +30,7 @@ function UserEditSreen() {
   useEffect(() => {
     if (user) {
       setName(user.name);
+      setPhone(user.phone);
       setEmail(user.email);
       setIsAdmin(user.isAdmin);
     }
@@ -40,6 +42,7 @@ function UserEditSreen() {
     const updatedUser = {
       userId,
       name,
+      phone,
       email,
       isAdmin,
     };
@@ -67,7 +70,7 @@ function UserEditSreen() {
           <Message variant="danger">{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name" className="my-0">
+            <Form.Group controlId="name" className="my-2">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
@@ -75,6 +78,16 @@ function UserEditSreen() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+              />
+            </Form.Group>
+            <Form.Group controlId="phone" className="my-2">
+              <Form.Label>Phone</Form.Label>
+              <Form.Control
+                type="Number"
+                placeholder="Ener Phone Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                // required
               />
             </Form.Group>
 

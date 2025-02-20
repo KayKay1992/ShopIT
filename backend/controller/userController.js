@@ -14,6 +14,7 @@ const authUser = asyncHandler(async (req, res) => {
     generateToken(user._id, res);
     res.json({
       _id: user._id,
+      phone: user.phone,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
@@ -29,7 +30,7 @@ const authUser = asyncHandler(async (req, res) => {
 //@access public
 const registerUser = asyncHandler(async (req, res) => {
   //getting the user details from the database
-  const { name, email, password } = req.body;
+  const { name, phone, email, password } = req.body;
 
   //Checking if the user already exists in the database
   const userExists = await User.findOne({ email });
@@ -41,6 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
   //Creating a new user
   const user = await User.create({
     name,
+    phone,
     email,
     password,
   });
@@ -51,6 +53,7 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(201).json({
       _id: user._id,
       name: user.name,
+      phone: user.phone,
       email: user.email,
       isAdmin: user.isAdmin,
     });
@@ -84,6 +87,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
     res.json({
       _id: user._id,
       name: user.name,
+      phone: user.phone,
       email: user.email,
       isAdmin: user.isAdmin,
     });
@@ -102,6 +106,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     //Updating the user details
     user.name = req.body.name || user.name;
+    user.phone = req.body.phone || user.phone
     user.email = req.body.email || user.email;
     if (req.body.password) {
       user.password = req.body.password;
@@ -111,6 +116,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     res.status(200).json({
       _id: updatedUser._id,
       name: updatedUser.name,
+      phone: updatedUser.phone,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
     });
@@ -146,7 +152,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const getUsers = asyncHandler(async (req, res) => {
   try {
     // Pagination setup
-    const pageSize = 2;
+    const pageSize = 12;
     const page = Number(req.query.pageNumber) || 1;
 
     // Total number of users
@@ -164,6 +170,7 @@ const getUsers = asyncHandler(async (req, res) => {
 
     // Fetch users for the current page with pagination
     const users = await User.find({})
+    .sort({ _id: -1 }) // Sort by _id in descending order (newest first)
       .limit(pageSize) // Limit to the number of users per page
       .skip(pageSize * (page - 1)); // Skip the appropriate number of users based on the page
 
@@ -220,6 +227,7 @@ const updateUser = asyncHandler(async (req, res) => {
   if (user) {
     //Updating the user details
     user.name = req.body.name || user.name;
+    user.phone = req.body.phone || user.phone;
     user.email = req.body.email || user.email;
     user.isAdmin = Boolean(req.body.isAdmin);
     //Saving the user
@@ -227,6 +235,7 @@ const updateUser = asyncHandler(async (req, res) => {
     res.status(200).json({
       _id: updatedUser._id,
       name: updatedUser.name,
+      phone: updatedUser.phone,
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
     });

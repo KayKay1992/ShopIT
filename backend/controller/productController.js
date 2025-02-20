@@ -16,6 +16,7 @@ const getProducts = asyncHandler(async (req, res) => {
   const totalProducts = await Product.countDocuments({...keyword})
   // Fetch products from your database
   const products = await Product.find({...keyword})
+  .sort({ _id: -1 }) // Sort by _id in descending order (newest first)
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   res.json({

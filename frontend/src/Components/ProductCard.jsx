@@ -17,7 +17,7 @@ function ProductCard({ product }) {
         <Card.Text as="p">
           {product.description.substring(0, 50)}...
         </Card.Text>
-        <Card.Text as='h3'>${product.price}</Card.Text>
+        <Card.Text as='h3'>#{product.price}</Card.Text>
         <Card.Text as='div'>
           <Rating value={product.rating} text={`${product.numReviews}reviews`}/>
         </Card.Text>

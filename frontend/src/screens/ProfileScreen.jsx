@@ -14,6 +14,7 @@ import { useGetMyOrdersQuery } from "../slices/ordersApiSlice"
 
 function ProfileScreen() {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] =useState('');
@@ -28,6 +29,7 @@ function ProfileScreen() {
   useEffect(() => {
     if (userInfo) {
       setName(userInfo.name);
+      setPhone(userInfo.phone);
       setEmail(userInfo.email);
      }
   }, [userInfo, userInfo.name, userInfo.email]);
@@ -43,6 +45,7 @@ function ProfileScreen() {
         const res = await updateProfile({
           _id: userInfo._id,
           name,
+          phone,
           email,
           password,
         }).unwrap();
@@ -63,6 +66,10 @@ function ProfileScreen() {
           <Form.Group controlId="name" className="my-2">
             <Form.Label>Name</Form.Label>
             <Form.Control type="name" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)} />
+          </Form.Group>
+          <Form.Group controlId="phone" className="my-2">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control type="phone" placeholder="Enter Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </Form.Group>
           <Form.Group controlId="email" className="my-2">
             <Form.Label>Email</Form.Label>
@@ -104,7 +111,7 @@ function ProfileScreen() {
             <tr key={order._id}>
               <td>{order._id}</td>
               <td>{order.createdAt.substring(0, 10)}</td>
-              <td>$ {order.totalPrice}</td>
+              <td>#{order.totalPrice}</td>
               
               <td>{order.isPaid? (order.paidAt.substring(0, 10)) : (
                 <FaTimes style={{color: "red"}}/>

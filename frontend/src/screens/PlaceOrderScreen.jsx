@@ -53,16 +53,16 @@ function PlaceOrderScreen() {
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>Shipping </h2>
-              <p>
-                <stong>Address:</stong>
+              <h5>
+                <p>Address:</p>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city},{" "}
                 {cart.shippingAddress.postalCode},{" "}
                 {cart.shippingAddress.country}
-              </p>
+              </h5>
             </ListGroup.Item>
             <ListGroup.Item>
               <h2>Payment Method</h2>
-              <strong>Method : </strong>
+              <h5>Method : </h5>
               {cart.paymentMethod}
             </ListGroup.Item>
             <ListGroup.Item>
@@ -89,7 +89,7 @@ function PlaceOrderScreen() {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price}= ${item.qty * item.price}
+                          {item.qty} x #{item.price}= #{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -108,28 +108,28 @@ function PlaceOrderScreen() {
               <ListGroup.Item>
                 <Row>
                   <Col>
-                    <strong>Items:</strong> ${cart.itemsPrice}
+                    <h5>Items:</h5> #{cart.itemsPrice}
                   </Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>
-                    <strong>Shipping:</strong> ${cart.shippingPrice}
+                    <h5>Shipping:</h5> #{cart.shippingPrice}
                   </Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>
-                    <strong>Tax:</strong> ${cart.taxPrice}
+                    <h5>Tax:</h5> #{cart.taxPrice}
                   </Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>
-                    <strong>Total:</strong> ${cart.totalPrice}
+                    <h5>Total:</h5> #{cart.totalPrice}
                   </Col>
                 </Row>
               </ListGroup.Item>
