@@ -42,9 +42,13 @@ const cartSlice = createSlice({
       state.cartItems = [];
       return updateCart(state)
     },
+    // creating an action creator to reset cart 
+    resetCart: (state) => {
+      state = initialState;
+    },
   },
 });
 
-export const { addToCart, removeFromCart, saveShippingAddress, savePaymentMethod, clearCartItems } = cartSlice.actions;
+export const { addToCart, removeFromCart, saveShippingAddress, savePaymentMethod, clearCartItems, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

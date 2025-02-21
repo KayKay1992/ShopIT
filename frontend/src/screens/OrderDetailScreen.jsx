@@ -49,7 +49,7 @@ function OrderDetailScreen() {
   return isLoading ? (
     <Loader />
   ) : error ? (
-    <Message variant="danger">Error fetching order details</Message>
+    <Message variant="danger">{error?.data?.message || error.error}</Message>
   ) : (
     <>
       <h1>Order Details {order._id}</h1>

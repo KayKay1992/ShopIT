@@ -11,6 +11,7 @@ import {
   updateProduct,
 } from "../controller/productController.js";
 import { protect, admin } from "../middleware/authMiddleware.js";
+import checkObjectId from "../middleware/checkObjectId.js";
 
 //Route to get all products
 router.get("/", getProducts);
@@ -20,18 +21,18 @@ router.get("/", getProducts);
 router.get("/top", getTopProducts);
 
 //Route to get a single product
-router.get("/:id", getProductById);
+router.get("/:id", checkObjectId, getProductById);
 
 //Route to update a  product
 router.put("/:id", protect, admin, updateProduct);
 
 //Route to create a new product
-router.post("/", protect, admin, createProduct);
+router.post("/", protect, admin, checkObjectId, createProduct);
 
 //Route to delete a product
-router.delete("/:id", protect, admin, deleteProduct);
+router.delete("/:id", protect, admin, checkObjectId, deleteProduct);
 
 //Route to create a new review
-router.post("/:id/reviews", protect, createProductReview);
+router.post("/:id/reviews", protect, checkObjectId, createProductReview);
 
 export default router;

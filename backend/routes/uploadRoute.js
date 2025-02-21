@@ -15,37 +15,51 @@ const storage = multer.diskStorage({
   },
 });
 
-{/*function to check the filetype */}
-function checkFileType(file, cb){
-    // Allowed file types
-    const filetypes = /jpeg|jpg|png/;
-    // Check ext
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    // Check mime
-    const mimetype = filetypes.test(file.mimetype);
-    if(mimetype && extname){
-        return cb(null, true);
-    } else {
-        cb('Images only!');
-    }
+// {/*function to check the filetype */}
+// function checkFileType(file, cb){
+//     // Allowed file types
+//     const filetypes = /jpeg|jpg|png/;
+//     // Check ext
+//     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+//     // Check mime
+//     const mimetype = filetypes.test(file.mimetype);
+//     if(mimetype && extname){
+//         return cb(null, true);
+//     } else {
+//         cb('Images only!');
+//     }
+// }
+function fileFilter(req, file, cb){
+  const filetypes = /jpe?g|png|webp/;
+  const mimetypes = /image\/jpe?g|image\/png|image\/webp/;
+
+  const extname = filetypes.test(path.extname(file.originalname).toLocaleLowerCase());
+  const mimetype = mimetypes.test(file.mimetype);
+
+  if(mimetype && extname){
+    cb(null, true);
+  } else {
+    cb(new Error('Only images are allowed!'), false);
+  }
 }
 
 // Initialize Multer to enable upload
 
-const upload = multer({
-    storage,
-    // limits: { fileSize: 1024 * 1024 * 5 }, // 5MB
-    // fileFilter: (req, file, cb) => {
-    //     checkFileType(file, cb);
-    // }
-});
+const upload = multer({storage, fileFilter});
+const uploadSingleImage = upload.single('image');
 
 // Upload route
 
-router.post('/', upload.single('image'), (req, res) => {
-    res.send({ message: 'File uploaded successfully!',
-        image: `/${req.file.path}`,
-     });
+router.post('/', (req, res) => {
+    uploadSingleImage(req, res, function(err) {
+      if (err) {
+        res.status(400).send({ message: err.message });
+      }
+      res.status(200).send({
+        message: 'Image Successfully Uploaded',
+        image: `/${req.file.path}`
+      });
+    })
 });
 
 export default router;

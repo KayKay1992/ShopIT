@@ -67,7 +67,7 @@ function ProductListScreen() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant="dangeer">{error}</Message>
+        <Message variant="dangeer">{error.data.message || error.error}</Message>
       ) : (
         <>
           <Table striped hover responsive className="table-sm">

@@ -1,14 +1,16 @@
-Deployment using render
+Adding a custom Domain.
 
-Make sure you have pushed your code to github.
-go to render.com click dashboard and sign up with github.
-After sign in click on add new and choose web service.
-then select the repository you wannt to deploy which in our case is shopit and click connect.
-then give it a name.
+in your render dashboard go to settings scroll to custom domains
+put your custom domain and click save eg (www.customdomain.com).
+then add a cname record. copy the link go to the domain where u registered your custom domain. delete the cname that are there and add a new record which is a cname.
+type... cname record
+host... www
+value... (paste what you copied after registering your custom domain)
+ttl... automatic.
+copy the Aname from your render and register new record in your domain site thats the ip address which you should paste in value. and put @ under host.
+then go back to your render and click verify in cname and Aname.
 
-set your build command to npm run build.
-set the start command to npm start
-select free package
 
-register your environment variable like MONGO_URI AND JWT_SECRET.
+Add server ip address as address that can access your data base.
+go to render dashboard and click on connect you will see the ip address and copy them one after the other and add them to your mongodb atlas. 
 
