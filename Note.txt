@@ -1,12 +1,14 @@
-preparing for deployment
-we are not going to have our react dev server in production.
-so we go to server.js to check if the process.env.node_env === 'production' 
+Deployment using render
 
-in root package.json we created a script called build. so that when we run npm run build from root it can acually run.
+Make sure you have pushed your code to github.
+go to render.com click dashboard and sign up with github.
+After sign in click on add new and choose web service.
+then select the repository you wannt to deploy which in our case is shopit and click connect.
+then give it a name.
 
-when you run npm run build it will create an optimized production build ... so in your terminal run npm run build.
-after you will see a build folder created in your frontend.
+set your build command to npm run build.
+set the start command to npm start
+select free package
 
-in your .env set the NODE_ENV = "production"
+register your environment variable like MONGO_URI AND JWT_SECRET.
 
-After changed the NODE_ENV = "development" and delete the build folder because render its going to create it automatically.
