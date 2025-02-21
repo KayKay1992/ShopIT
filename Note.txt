@@ -1,10 +1,12 @@
-final Touches
+preparing for deployment
+we are not going to have our react dev server in production.
+so we go to server.js to check if the process.env.node_env === 'production' 
 
-favicon changed
-items sorted. recent products, orders and users are rendered at the top.
-currency changed to naira
-phone number added to user model and user info.
-Tax percentage is changed to zero (0) no tax
+in root package.json we created a script called build. so that when we run npm run build from root it can acually run.
 
+when you run npm run build it will create an optimized production build ... so in your terminal run npm run build.
+after you will see a build folder created in your frontend.
 
+in your .env set the NODE_ENV = "production"
 
+After changed the NODE_ENV = "development" and delete the build folder because render its going to create it automatically.
